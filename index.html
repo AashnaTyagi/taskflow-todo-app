@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TaskFlow — Get Things Done</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    .splash {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 2rem;
+      padding: 2rem;
+      background: var(--bg);
+    }
+    .splash-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      line-height: 1;
+    }
+    .splash-logo span { color: var(--accent); }
+    .splash-tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 400px;
+      font-weight: 300;
+    }
+    .splash-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .splash-badge {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: var(--surface);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+    .hero-graphic {
+      width: 120px;
+      height: 120px;
+      background: var(--accent);
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      box-shadow: 0 20px 60px color-mix(in srgb, var(--accent) 40%, transparent);
+      animation: floatIn 0.8s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    @keyframes floatIn {
+      from { opacity:0; transform: translateY(30px) scale(0.8); }
+      to { opacity:1; transform: translateY(0) scale(1); }
+    }
+    .splash-logo { animation: floatIn 0.8s 0.1s cubic-bezier(0.34,1.56,0.64,1) both; }
+    .splash-tagline { animation: floatIn 0.8s 0.2s cubic-bezier(0.34,1.56,0.64,1) both; }
+    .splash-actions { animation: floatIn 0.8s 0.3s cubic-bezier(0.34,1.56,0.64,1) both; }
+  </style>
+</head>
+<body>
+  <span class="splash-badge">✦ 100% Client-side</span>
+  <main class="splash">
+    <div class="hero-graphic">✓</div>
+    <h1 class="splash-logo">Task<span>Flow</span></h1>
+    <p class="splash-tagline">A beautifully minimal to-do app. Stay focused, ship more, stress less.</p>
+    <div class="splash-actions">
+      <a href="login.html" class="btn btn-primary">Sign In</a>
+      <a href="signup.html" class="btn btn-ghost">Create Account</a>
+    </div>
+  </main>
+
+  <footer style="text-align:center;padding:1.2rem 2rem;font-size:0.8rem;color:var(--text-muted);border-top:1px solid var(--border);background:var(--surface);display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+    <span>Made with <span style="color:var(--accent);">♥</span> by <strong style="color:var(--accent);">Aashna</strong></span>
+    <span style="color:var(--border-strong);">|</span>
+    <span>© <span id="yr"></span> TaskFlow. All rights reserved.</span>
+  </footer>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script>
+    // Auto-redirect if already logged in
+    const session = localStorage.getItem('taskflow_session');
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+</body>
+</html>

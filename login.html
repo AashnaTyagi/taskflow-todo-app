@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In — TaskFlow</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="auth-layout">
+    <!-- Left Panel -->
+    <aside class="auth-panel">
+      <a href="index.html" class="auth-brand">Task<span>Flow</span></a>
+      <div class="auth-panel-content">
+        <div class="panel-quote">"Focus is the art of knowing what to ignore."</div>
+        <div class="panel-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="panel-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </aside>
+
+    <!-- Right: Form -->
+    <main class="auth-main">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h1>Welcome back</h1>
+          <p>Sign in to continue to your tasks</p>
+        </div>
+
+        <div id="notification" class="notification hidden"></div>
+
+        <form id="loginForm" class="auth-form" novalidate>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email"/>
+            <span class="form-error" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password"/>
+              <button type="button" class="toggle-pw" id="togglePw" aria-label="Toggle password">
+                <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <span class="form-error" id="passwordError"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            <span class="btn-text">Sign In</span>
+            <span class="btn-spinner hidden"></span>
+          </button>
+        </form>
+
+        <p class="auth-switch">Don't have an account? <a href="signup.html">Create one</a></p>
+      </div>
+
+      <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </main>
+  </div>
+
+  <footer style="text-align:center;padding:1rem 2rem;font-size:0.78rem;color:var(--text-muted);border-top:1px solid var(--border);background:var(--surface);display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;">
+    <span>Made with <span style="color:var(--accent);">♥</span> by <strong style="color:var(--accent);">Aashna</strong></span>
+    <span style="color:var(--border-strong);">|</span>
+    <span>© <span id="yr"></span> TaskFlow. All rights reserved.</span>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('loginForm').addEventListener('submit', handleLogin);
+    document.getElementById('togglePw').addEventListener('click', () => togglePassword('password', 'eyeIcon'));
+  </script>
+</body>
+</html>
