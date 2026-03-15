@@ -4,7 +4,7 @@
 
 > A production-grade, fully client-side To-Do List web application built with pure HTML5, CSS3, and Vanilla JavaScript. No frameworks. No backend. No dependencies. Just clean, professional code.
 
-**Made with ♥ by Aashna** &nbsp;|&nbsp; © 2025 TaskFlow. All rights reserved.
+**Made with ♥ by Aashna** &nbsp;|&nbsp; © 2026 TaskFlow. All rights reserved.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -336,6 +336,6 @@ Unauthorized copying or redistribution without attribution is prohibited.
 ### TaskFlow ✓
 **Stay focused. Ship more. Stress less.**
 
-Made with ♥ by **Aashna** &nbsp;·&nbsp; © 2025 TaskFlow
+Made with ♥ by **Aashna** &nbsp;·&nbsp; © 2026 TaskFlow
 
 </div>
